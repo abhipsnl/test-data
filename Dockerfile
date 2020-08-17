@@ -17,18 +17,12 @@ RUN apk del gcc g++ make
 
 
 COPY app app
-COPY . ./
-
-COPY init_app.py ./
-
-ENV FLASK_APP init_app.py
 
 RUN chown -R pythonwebapi:pythonwebapi ./
 USER pythonwebapi
 
 EXPOSE 8000
-#ENTRYPOINT ["uvicorn","init_app:app","--host","0.0.0.0"]
+
 ENTRYPOINT ["python", "./app/Addition.py"]
-#CMD python ./app/Addition.py 
 
 
