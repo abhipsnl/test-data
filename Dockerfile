@@ -21,7 +21,7 @@ COPY app app
 RUN chown -R pythonwebapi:pythonwebapi ./
 USER pythonwebapi
 
-EXPOSE 8000
+EXPOSE 5000
 
 ENTRYPOINT ["python", "./app/Addition.py"]
 
